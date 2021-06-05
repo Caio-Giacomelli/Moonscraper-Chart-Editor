@@ -30,8 +30,10 @@ public class ChartEditor : UnitySingleton<ChartEditor>
     public EditorInteractionManager interactionMethodManager;
 
 
-    [Header("Caio Shenanigans")] 
+    
     public List<DevisionNote> noteTimings = new List<DevisionNote>();
+
+    [Header("Caio Shenanigans")] 
     public bool isMapped;
     public bool isRed;
 
