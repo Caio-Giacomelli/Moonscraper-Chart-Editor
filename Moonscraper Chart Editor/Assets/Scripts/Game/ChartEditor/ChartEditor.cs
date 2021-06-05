@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using MoonscraperEngine;
 using MoonscraperEngine.Audio;
@@ -27,6 +28,12 @@ public class ChartEditor : UnitySingleton<ChartEditor>
     public static bool isDirty = false;
     public EditorObjectToolManager toolManager;
     public EditorInteractionManager interactionMethodManager;
+
+
+    [Header("Caio Shenanigans")] 
+    public List<DevisionNote> noteTimings = new List<DevisionNote>();
+    public bool isMapped;
+    public bool isRed;
 
     [Header("Tool prefabs")]
     public GroupMove groupMove;
@@ -1165,10 +1172,81 @@ public class ChartEditor : UnitySingleton<ChartEditor>
         foreach (HitAnimation hitAnim in indicators.animations)
             hitAnim.StopAnim();
 
-        SystemManagerState playingState = new PlayingState(true, currentVisibleTime, stopResetTime);
-        PopulatePersistentSystemsForNewState(State.Playing, playingState);
-        ChangeState(State.Playing, playingState);
+        if (isMapped){
+            noteTimings.Add(new DevisionNote(currentVisibleTime + currentSong.offset, isRed));
+            Debug.Log(message:$"current chart: {currentChart.notes[0].guitarFret}");
+            Debug.Log(message:$"current position: {currentTickPos}");
+
+        } else {
+            SystemManagerState playingState = new PlayingState(true, currentVisibleTime, stopResetTime);
+            PopulatePersistentSystemsForNewState(State.Playing, playingState);
+            ChangeState(State.Playing, playingState);
+        }
+        
     }
+
+
+    public void createJSONMappedFile(){
+        MappingOverhaul mapSong = new MappingOverhaul();
+        mapSong.mappedSong = new List<MappingOverhaul.MappingUnit>();
+        int i = 0;
+        foreach (DevisionNote note in noteTimings)
+        {
+            MappingOverhaul.MappingUnit unit = new MappingOverhaul.MappingUnit();
+            unit.strumTime = note.strumTime;
+            if (currentChart.notes[i].guitarFret == Note.GuitarFret.Green){
+                unit.activatorXPosition = "l";
+            } else if (currentChart.notes[i].guitarFret == Note.GuitarFret.Red){
+                unit.activatorXPosition = "ml";
+            } else if (currentChart.notes[i].guitarFret == Note.GuitarFret.Blue){
+                unit.activatorXPosition = "mr";
+            } else if (currentChart.notes[i].guitarFret == Note.GuitarFret.Orange){
+                unit.activatorXPosition = "r";
+            }
+            if (note.isRed) unit.activatorYPosition = "rY";
+            else unit.activatorYPosition = "bY";
+            mapSong.mappedSong.Add(unit);
+            i++;
+        }
+
+        string jsonData = JsonUtility.ToJson(mapSong, true);
+
+        Debug.Log(message: $"JSON Data: {jsonData}");
+
+        string path = @"C:\Users\Giacomelli\Documents\Devision\songs\moonMaps\phobos--expert.json";
+
+        File.WriteAllText(path, jsonData );
+    }
+
+    [System.Serializable]
+    public class MappingOverhaul
+    {
+        public List<MappingUnit> mappedSong;
+        public float noteSpeed;
+    
+        [System.Serializable]
+        public class MappingUnit{
+            public float strumTime;
+            public string activatorXPosition;
+            public string activatorYPosition;
+
+            public float xPosition;
+            public float yPosition;
+            public GameObject noteInstantiated;
+        }
+    }
+
+    public class DevisionNote
+    {
+        public float strumTime;
+        public bool isRed;
+
+        public DevisionNote(float noteTime, bool color)
+        {
+            strumTime = noteTime;
+            isRed = color;
+        }
+    } 
 
     public IEnumerator PlayAutoStop(float playTime)
     {
