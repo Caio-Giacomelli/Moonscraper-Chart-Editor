@@ -82,3 +82,72 @@ Received Import Request.
   path: Assets/Scenes/Tests/WhammyTest.unity
   artifactKey: Guid(0363c7ae4654bff4f9b1e699b1f7ad62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Tests/WhammyTest.unity using Guid(0363c7ae4654bff4f9b1e699b1f7ad62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '607f50202ede19667c80d9d27b7786ba') in 0.005099 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.137333 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.899 seconds
+Platform modules already initialized, skipping
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Normal/DiffuseBumped': fallback shader 'MK/MKGlow/Diffuse' not found
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2025 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.0 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2539.
+Total: 5.609400 ms (FindLiveObjects: 0.188800 ms CreateObjectMapping: 0.077400 ms MarkObjects: 5.241000 ms  DeleteObjects: 0.101300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009050 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.836 seconds
+Platform modules already initialized, skipping
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Normal/DiffuseBumped': fallback shader 'MK/MKGlow/Diffuse' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2025 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.1 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2542.
+Total: 4.994700 ms (FindLiveObjects: 0.160200 ms CreateObjectMapping: 0.061800 ms MarkObjects: 4.678700 ms  DeleteObjects: 0.093300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006973 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.839 seconds
+Platform modules already initialized, skipping
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Normal/DiffuseBumped': fallback shader 'MK/MKGlow/Diffuse' not found
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2025 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.1 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2545.
+Total: 4.924500 ms (FindLiveObjects: 0.162700 ms CreateObjectMapping: 0.068500 ms MarkObjects: 4.591100 ms  DeleteObjects: 0.101000 ms)
+
