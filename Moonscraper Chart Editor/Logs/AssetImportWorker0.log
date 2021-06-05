@@ -151,3 +151,27 @@ System memory in use after: 112.1 MB.
 Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2545.
 Total: 4.924500 ms (FindLiveObjects: 0.162700 ms CreateObjectMapping: 0.068500 ms MarkObjects: 4.591100 ms  DeleteObjects: 0.101000 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006599 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.837 seconds
+Platform modules already initialized, skipping
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Toon/BasicOutline': fallback shader 'Toon/Basic' not found
+Shader 'MK/MKGlow/Normal/DiffuseBumped': fallback shader 'MK/MKGlow/Diffuse' not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2025 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.1 MB.
+System memory in use after: 112.1 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2548.
+Total: 5.637700 ms (FindLiveObjects: 0.154900 ms CreateObjectMapping: 0.058400 ms MarkObjects: 5.330800 ms  DeleteObjects: 0.092900 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
