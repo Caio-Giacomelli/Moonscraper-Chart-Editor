@@ -227,6 +227,10 @@ public class ChartEditor : UnitySingleton<ChartEditor>
 
     public void Update()
     {
+
+        //Debug.Log(message: $"current selected object: {selectedObjectsManager.currentSelectedObject}");
+        //Debug.Log(message: $"current selected time: {currentVisibleTime}");
+
         if (haltThreadForQuit)
             return;
 
@@ -1175,9 +1179,9 @@ public class ChartEditor : UnitySingleton<ChartEditor>
             hitAnim.StopAnim();
 
         if (isMapped){
-            noteTimings.Add(new DevisionNote(currentVisibleTime + currentSong.offset, isRed));
-            Debug.Log(message:$"current chart: {currentChart.notes[0].guitarFret}");
-            Debug.Log(message:$"current position: {currentTickPos}");
+            //noteTimings.Add(new DevisionNote(currentVisibleTime + currentSong.offset, isRed));
+            //Debug.Log(message:$"current chart: {currentChart.notes[0].guitarFret}");
+            //Debug.Log(message:$"current position: {currentTickPos}");
 
         } else {
             SystemManagerState playingState = new PlayingState(true, currentVisibleTime, stopResetTime);
@@ -1241,7 +1245,16 @@ public class ChartEditor : UnitySingleton<ChartEditor>
     public class DevisionNote
     {
         public float strumTime;
+
+        public float tick;
         public bool isRed;
+
+        public DevisionNote(float noteTime, bool color, float tickPos)
+        {
+            strumTime = noteTime;
+            isRed = color;
+            tick = tickPos;
+        }
 
         public DevisionNote(float noteTime, bool color)
         {

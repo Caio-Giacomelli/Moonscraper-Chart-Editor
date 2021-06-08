@@ -28,7 +28,7 @@ public class TimelineHandler : MonoBehaviour, IDragHandler, IPointerDownHandler
     StarpowerGUIController[] starpowerIndicatorPool = new StarpowerGUIController[POOL_SIZE];
 
     RectTransform rectTransform;
-    MovementController movement;
+    public MovementController movement;
 
     float halfHeight;
     float scaledHalfHeight;
