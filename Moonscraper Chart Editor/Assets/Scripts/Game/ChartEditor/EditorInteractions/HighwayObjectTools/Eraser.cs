@@ -79,7 +79,7 @@ public class Eraser : ToolObject {
 
             ExecuteCurrentDeletes();
 
-            DeleteNoteTiming(songObject);
+            //DeleteNoteTiming(songObject);
         }
     }
 
@@ -95,7 +95,8 @@ public class Eraser : ToolObject {
         for (int i = 0; i < editor.noteTimings.Count; i++)
         {
             if (editor.noteTimings[i].tick == songObject.tick){
-                editor.noteTimings.Remove(editor.noteTimings[i]);        
+                editor.noteTimings.Remove(editor.noteTimings[i]);
+                editor.noteTimingsSize -= 1;  
             }
         }
     }

@@ -36,6 +36,9 @@ public class ChartEditor : UnitySingleton<ChartEditor>
     [Header("Caio Shenanigans")] 
     public bool isMapped;
     public bool isRed;
+    
+    [HideInInspector]
+    public int noteTimingsSize;
 
     [Header("Tool prefabs")]
     public GroupMove groupMove;
@@ -1179,9 +1182,9 @@ public class ChartEditor : UnitySingleton<ChartEditor>
             hitAnim.StopAnim();
 
         if (isMapped){
-            //noteTimings.Add(new DevisionNote(currentVisibleTime + currentSong.offset, isRed));
-            //Debug.Log(message:$"current chart: {currentChart.notes[0].guitarFret}");
-            //Debug.Log(message:$"current position: {currentTickPos}");
+            noteTimings.Add(new DevisionNote(currentVisibleTime + currentSong.offset, isRed));
+            Debug.Log(message:$"current chart: {currentChart.notes[0].guitarFret}");
+            Debug.Log(message:$"current position: {currentTickPos}");
 
         } else {
             SystemManagerState playingState = new PlayingState(true, currentVisibleTime, stopResetTime);
@@ -1242,6 +1245,7 @@ public class ChartEditor : UnitySingleton<ChartEditor>
         }
     }
 
+    [System.Serializable]
     public class DevisionNote
     {
         public float strumTime;
@@ -1425,6 +1429,10 @@ public class ChartEditor : UnitySingleton<ChartEditor>
     {
         Copy();
         Delete();
+    }
+
+    public void toggleRedOption(){
+        isRed = !isRed;
     }
 
     // Gives undo-redo functionality to sub-states

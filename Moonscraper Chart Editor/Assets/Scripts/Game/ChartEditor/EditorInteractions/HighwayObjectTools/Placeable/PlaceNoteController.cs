@@ -540,13 +540,14 @@ public class PlaceNoteController : ObjectlessTool {
             UpdateNoteLinkedListRefs(activeNotes);  
 
             editor.selectedObjectsManager.currentSelectedObject = primaryActiveNote;
-            StartCoroutine(SetLanePosition(primaryActiveNote));   
+            //StartCoroutine(SetLanePosition(primaryActiveNote));   
         }
     }
 
     IEnumerator SetLanePosition(Note primaryNote){
         yield return new WaitForSeconds(0.1f);
         editor.timeHandler.movement.SetPosition(primaryNote.tick);
+        editor.noteTimingsSize += 1;
         editor.noteTimings.Add(new ChartEditor.DevisionNote(editor.currentVisibleTime + editor.currentSong.offset, editor.isRed, primaryNote.tick));
     }
 
